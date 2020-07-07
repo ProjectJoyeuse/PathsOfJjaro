@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://weapons/fusion_pistol.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/M1/Fusion_Pistol_Fire.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Joyeuse/Basics/Animation/test.tscn" type="PackedScene" id=3]
+
+[node name="fusion_pistol" type="Spatial"]
+script = ExtResource( 1 )
+sd = ExtResource( 2 )
+
+[node name="gun" type="Spatial" parent="."]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.286465, -0.834585, -1.33104 )
+
+[node name="RHand_Pos" parent="gun" instance=ExtResource( 3 )]
+
+[node name="LHand_Pos" type="Position3D" parent="gun"]
+transform = Transform( -0.0224263, 0.999335, -0.0287392, 0.794412, 0.0352654, 0.606355, 0.606965, -0.00923243, -0.794675, 0.708971, -0.337851, -0.613185 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="overload" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="charge" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.390083 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="overload" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="overload" to="." method="_on_overload_timeout"]
+[connection signal="timeout" from="charge" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="charge" to="." method="_on_charge_timeout"]
+
+[editable path="gun/RHand_Pos"]

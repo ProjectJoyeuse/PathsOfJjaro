@@ -1,3 +1,6 @@
+
+PathsOfJjaro
+=======
 # Paths Of Jjaro
 Paths of Jjaro is a 3D game based on Bungie's Marathon, made by the community for the community. Open sourced.
 Made using Joyeuse Framework for Godot. The code itself is under MIT License. 

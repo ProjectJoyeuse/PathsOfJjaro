@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Mega Class_1001_Normal_OGL.png-72f8bea2f328d8cbbcd92934542773a9.s3tc.stex"
+path.etc2="res://.import/Mega Class_1001_Normal_OGL.png-72f8bea2f328d8cbbcd92934542773a9.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/wep_models/Mega_Class/Textures/4096/Mega Class_1001_Normal_OGL.png"
+dest_files=[ "res://.import/Mega Class_1001_Normal_OGL.png-72f8bea2f328d8cbbcd92934542773a9.s3tc.stex", "res://.import/Mega Class_1001_Normal_OGL.png-72f8bea2f328d8cbbcd92934542773a9.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

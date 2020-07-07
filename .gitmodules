@@ -1,0 +1,9 @@
+[submodule "Joyeuse"]
+	path = Joyeuse
+	url = https://github.com/RiseRobotRise/JoyeuseCodeBase.git
+[submodule "assets/sounds/M1"]
+	path = assets/sounds/M1
+	url = https://github.com/RiseRobotRise/M1A1-Sounds.git
+[submodule "assets/Characters"]
+	path = assets/Characters
+	url = https://github.com/RiseRobotRise/Characters.git
