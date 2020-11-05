@@ -2,7 +2,8 @@
 
 [ext_resource path="res://weapons/fusion_pistol.gd" type="Script" id=1]
 [ext_resource path="res://assets/sounds/M1/Fusion_Pistol_Fire.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Joyeuse/Basics/Animation/test.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Joyeuse/core/Animation/test.tscn" type="PackedScene" id=3]
+
 
 [node name="fusion_pistol" type="Spatial"]
 script = ExtResource( 1 )
