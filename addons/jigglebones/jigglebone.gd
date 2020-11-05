@@ -4,7 +4,7 @@ extends Spatial
 enum Axis {
 	X_Plus, Y_Plus, Z_Plus, X_Minus, Y_Minus, Z_Minus
 }
-
+onready var skeleton : Skeleton = get_parent()
 export (String) var bone_name
 export(float, 0.1, 100, 0.1) var stiffness = 1
 export(float, 0, 100, 0.1) var damping = 0
@@ -13,6 +13,7 @@ export var gravity = Vector3(0, -9.81, 0)
 export(Axis) var forward_axis = Axis.Z_Minus
 
 # Previous position
+onready var initial_translate = translation
 var prev_pos = Vector3()
 
 # Rest length of the distance constraint
@@ -35,8 +36,6 @@ func _ready():
 	prev_pos = global_transform.origin
 
 func _process(delta):
-	
-	var skeleton : Skeleton = get_parent()
 	
 	if !(skeleton is Skeleton):
 		jiggleprint("Jigglebone must be a direct child of a Skeleton node")
@@ -83,7 +82,12 @@ func _process(delta):
 	
 	prev_pos = global_transform.origin
 	global_transform.origin = global_transform.origin + vel * delta
-	
+	if is_nan(translation.x) or is_inf(translation.x):
+		translation.x = initial_translate.x
+	if is_nan(translation.y) or is_inf(translation.y):
+		translation.y = initial_translate.y
+	if is_nan(translation.z) or is_inf(translation.z):
+		translation.z = initial_translate.z
 	############### Solve distance constraint ##############
 	
 	var goal_pos = skeleton.to_global(skeleton.get_bone_global_pose(bone_id).origin)
@@ -106,13 +110,15 @@ func _process(delta):
 	bone_rotate_axis = bone_rotate_axis.normalized()
 
 	# Bring the axis to object space, WITHOUT translation (so only the BASIS is used) since vectors shouldn't be translated
-	var bone_rotate_axis_obj = bone_transf_obj.basis.xform(bone_rotate_axis).normalized()
-	var bone_new_transf_obj = Transform(bone_transf_obj.basis.rotated(bone_rotate_axis_obj, bone_rotate_angle), bone_transf_obj.origin)  
+	var bone_rotate_axis_obj = bone_transf_obj.basis.xform(bone_rotate_axis.normalized()).normalized()
+	var bone_new_transf_obj = Transform(bone_transf_obj.basis.rotated(bone_rotate_axis_obj.normalized(), bone_rotate_angle), bone_transf_obj.origin)  
 
-	if is_nan(bone_new_transf_obj[0][0]):
+	if is_nan(bone_new_transf_obj.origin.x):
+		bone_new_transf_obj = Transform()
+	if is_nan(bone_new_transf_obj[0][0]) or is_nan(bone_new_transf_obj[0][1]):
 		bone_new_transf_obj = Transform()  # Corrupted somehow
 
-	skeleton.set_bone_global_pose_override(bone_id, bone_new_transf_obj, 0.5, true) 
+	skeleton.set_bone_global_pose_override(bone_id, bone_new_transf_obj,1, true) 
 	
 	# Orient this object to the jigglebone
 	global_transform.basis = (skeleton.global_transform * skeleton.get_bone_global_pose(bone_id)).basis
