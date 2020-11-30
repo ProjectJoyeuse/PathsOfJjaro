@@ -1,0 +1,191 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://assets/wep_models/Left_hand_guns.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/wep_models/Right_hand_guns.tscn" type="PackedScene" id=2]
+
+
+[sub_resource type="Animation" id=38]
+resource_name = "Default A Pose"
+length = 1.36667
+
+[sub_resource type="Animation" id=39]
+resource_name = "Run_Retarget_AB"
+length = 0.633333
+
+[sub_resource type="Animation" id=40]
+resource_name = "air_jump Retarget"
+length = 0.333333
+
+[sub_resource type="Animation" id=41]
+resource_name = "air_jump_anticipation Retarget"
+length = 0.266667
+
+[sub_resource type="Animation" id=42]
+resource_name = "air_land Retarget"
+length = 1.23333
+
+[sub_resource type="Animation" id=43]
+resource_name = "dash Retarget_AB"
+length = 0.7
+
+[sub_resource type="Animation" id=44]
+resource_name = "fight_idle_Retarget AB"
+length = 1.5
+
+[sub_resource type="Animation" id=45]
+resource_name = "fight_kick Retarget"
+length = 1.36667
+
+[sub_resource type="Animation" id=46]
+resource_name = "fight_punch Retarget"
+length = 0.5
+
+[sub_resource type="Animation" id=47]
+resource_name = "idle M1 alien AR"
+length = 1.36667
+
+[sub_resource type="Animation" id=48]
+resource_name = "idle M1 alien gun"
+length = 1.36667
+
+[sub_resource type="Animation" id=49]
+resource_name = "idle Retarget AB"
+length = 1.36667
+
+[sub_resource type="Animation" id=50]
+resource_name = "idle Rifle Retarget AB"
+length = 1.36667
+
+[sub_resource type="Animation" id=51]
+resource_name = "idle SPNKR Retarget AB001"
+length = 1.36667
+
+[sub_resource type="Animation" id=52]
+resource_name = "idle fusion pistol aim"
+length = 1.36667
+
+[sub_resource type="Animation" id=53]
+resource_name = "idle pistol Retarget AB "
+length = 1.36667
+
+[sub_resource type="Animation" id=54]
+resource_name = "idle pistol aim"
+length = 1.36667
+
+[sub_resource type="Animation" id=55]
+resource_name = "idle pistol double aim"
+length = 1.36667
+
+[sub_resource type="Animation" id=56]
+resource_name = "idle pistol left Hand"
+length = 1.36667
+
+[sub_resource type="Animation" id=57]
+resource_name = "idle riffle aim "
+length = 1.36667
+
+[sub_resource type="Animation" id=58]
+resource_name = "idle shotgun Retarget AB"
+length = 1.36667
+
+[sub_resource type="Animation" id=59]
+resource_name = "idle shotgun double"
+length = 1.36667
+
+[sub_resource type="Animation" id=60]
+resource_name = "idle shotgun double aim"
+length = 1.36667
+
+[sub_resource type="Animation" id=61]
+resource_name = "idle_to_fight Retarget"
+length = 0.5
+
+[sub_resource type="Animation" id=62]
+resource_name = "jump_full Retarget"
+length = 1.23333
+
+[sub_resource type="Animation" id=63]
+resource_name = "pistol fire "
+length = 0.366667
+
+[sub_resource type="Animation" id=64]
+resource_name = "rifle shoot"
+length = 0.166667
+
+[sub_resource type="Animation" id=65]
+resource_name = "shotgun shoot"
+length = 0.666667
+
+[sub_resource type="Animation" id=66]
+resource_name = "shotgun shotreload"
+length = 0.666667
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Origin001 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0.0353378, 0.043736, -0.0216316, -0.665658, 0.737751, 0.0987805, 0.0535324, 1, 1, 1.00001, 0.0666667, 1, 0.0353378, 0.043736, -0.0216316, -0.669739, 0.732863, 0.113433, 0.0386622, 1, 1, 1.00001, 0.133333, 1, 0.0353378, 0.043736, -0.0216316, 0.680849, -0.692783, -0.226, 0.0736247, 1, 1, 1.00001, 0.2, 1, 0.0353238, 0.0434962, -0.0207986, 0.637584, -0.582902, -0.427073, 0.267059, 1, 1, 1.00001, 0.266667, 1, 0.0352509, 0.0422417, -0.0164416, 0.506352, -0.354327, -0.62335, 0.479057, 1, 1, 1.00001, 0.333333, 1, 0.0352038, 0.04143, -0.0136224, 0.274725, -0.0514886, -0.715421, 0.64035, 1, 1, 1.00001, 0.4, 1, 0.0357914, 0.0419712, -0.015764, -0.0166299, 0.248405, -0.688609, 0.681055, 1, 1, 1.00001, 0.466667, 1, 0.0362641, 0.0428722, -0.0191947, -0.300873, 0.514934, -0.545913, 0.58847, 1, 1, 1.00001, 0.533333, 1, 0.0343125, 0.0432745, -0.0202669, -0.530897, 0.694467, -0.292308, 0.38784, 1, 1, 1.00001, 0.6, 1, 0.0288835, 0.0436974, -0.0209853, -0.658042, 0.735738, -0.0370438, 0.155878, 1, 1, 1.00001, 0.666667, 1, 0.0256525, 0.0439291, -0.0213719, -0.687395, 0.721703, 0.0684967, 0.0440612, 1, 1, 1.00001 )
+
+[sub_resource type="Animation" id=67]
+resource_name = "shotgun shotreload 2"
+length = 0.666667
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Origin 2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, -0.0480299, 0.0589715, -0.00577652, 0.604997, 0.794953, 0.0440111, -0.00958135, 0.999997, 1, 1.00001, 0.0666667, 1, -0.0480299, 0.0589715, -0.00577652, 0.614141, 0.787064, 0.0578329, 0.00405464, 0.999997, 1, 1.00001, 0.133333, 1, -0.0480299, 0.0589715, -0.00577652, 0.649074, 0.734055, 0.16249, 0.116029, 0.999997, 1, 1.00001, 0.2, 1, -0.0480388, 0.0592252, -0.00660531, 0.621817, 0.620431, 0.363055, 0.310806, 0.999997, 1, 1.00001, 0.266667, 1, -0.0480856, 0.0605525, -0.0109413, 0.537707, 0.350319, 0.581866, 0.499579, 0.999997, 1, 1.00001, 0.333333, 1, -0.0481158, 0.0614114, -0.0137468, 0.343911, 0.0337701, 0.657552, 0.669485, 0.999997, 1, 1.00001, 0.4, 1, -0.0475258, 0.0608907, -0.0115979, 0.0554245, -0.253491, 0.667905, 0.697548, 0.999997, 1, 1.00001, 0.466667, 1, -0.0470328, 0.060026, -0.00815913, -0.214431, -0.556175, 0.569094, 0.566411, 0.999997, 1, 1.00001, 0.533333, 1, -0.0489395, 0.0596586, -0.00706321, -0.462147, -0.74054, 0.327873, 0.361276, 0.999997, 1, 1.00001, 0.6, 1, -0.0543569, 0.0593289, -0.00619051, -0.618158, -0.77147, 0.10599, 0.107146, 0.999997, 1, 1.00001, 0.666667, 1, -0.0575913, 0.0591545, -0.00570206, 0.650082, 0.759074, -0.0271128, 0.0215874, 0.999997, 1, 1.00001 )
+
+[sub_resource type="Animation" id=68]
+resource_name = "walk Retarget AB"
+length = 1.03333
+
+[node name="guns_scaled" type="Spatial"]
+
+[node name="Light" type="Spatial" parent="."]
+transform = Transform( -0.290865, 0.566393, 0.771101, -0.0551891, 0.794672, -0.604525, -0.955171, -0.218391, -0.199883, 4.07625, 5.90386, -1.00545 )
+
+[node name="Camera" type="Spatial" parent="."]
+transform = Transform( 0.685921, 0.651558, 0.324014, 0, 0.445271, -0.895396, -0.727676, 0.61417, 0.305421, 7.35889, 4.95831, 6.92579 )
+
+[node name="Camera001" type="Spatial" parent="."]
+transform = Transform( -0.222178, -0.783642, -0.580123, 0.000199139, 0.594958, -0.803757, 0.975006, -0.178693, -0.132031, -19.3877, 13.0697, -2.30095 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Default A Pose" = SubResource( 38 )
+anims/Run_Retarget_AB = SubResource( 39 )
+"anims/air_jump Retarget" = SubResource( 40 )
+"anims/air_jump_anticipation Retarget" = SubResource( 41 )
+"anims/air_land Retarget" = SubResource( 42 )
+"anims/dash Retarget_AB" = SubResource( 43 )
+"anims/fight_idle_Retarget AB" = SubResource( 44 )
+"anims/fight_kick Retarget" = SubResource( 45 )
+"anims/fight_punch Retarget" = SubResource( 46 )
+"anims/idle M1 alien AR" = SubResource( 47 )
+"anims/idle M1 alien gun" = SubResource( 48 )
+"anims/idle Retarget AB" = SubResource( 49 )
+"anims/idle Rifle Retarget AB" = SubResource( 50 )
+"anims/idle SPNKR Retarget AB001" = SubResource( 51 )
+"anims/idle fusion pistol aim" = SubResource( 52 )
+"anims/idle pistol Retarget AB " = SubResource( 53 )
+"anims/idle pistol aim" = SubResource( 54 )
+"anims/idle pistol double aim" = SubResource( 55 )
+"anims/idle pistol left Hand" = SubResource( 56 )
+"anims/idle riffle aim " = SubResource( 57 )
+"anims/idle shotgun Retarget AB" = SubResource( 58 )
+"anims/idle shotgun double" = SubResource( 59 )
+"anims/idle shotgun double aim" = SubResource( 60 )
+"anims/idle_to_fight Retarget" = SubResource( 61 )
+"anims/jump_full Retarget" = SubResource( 62 )
+"anims/pistol fire " = SubResource( 63 )
+"anims/rifle shoot" = SubResource( 64 )
+"anims/shotgun shoot" = SubResource( 65 )
+"anims/shotgun shotreload" = SubResource( 66 )
+"anims/shotgun shotreload 2" = SubResource( 67 )
+"anims/walk Retarget AB" = SubResource( 68 )
+
+[node name="Origin 2" parent="." instance=ExtResource( 2 )]
+
+[node name="Origin001 2" parent="." instance=ExtResource( 1 )]

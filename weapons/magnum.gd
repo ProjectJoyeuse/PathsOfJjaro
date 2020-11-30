@@ -1,5 +1,5 @@
 extends RaycastWeapon
-export(PackedScene) var squib = preload("res://Joyeuse/Basics/Guns/squib.tscn")
+export(PackedScene) var squib = preload("res://joyeuse/core/weapons/squib.tscn")
 
 export var spread = 2
 onready var AISHS = get_tree().get_root().get_node("World/AI_SH_SYSTEM")

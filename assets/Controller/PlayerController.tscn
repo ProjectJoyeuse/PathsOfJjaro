@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Characters/Models/M2 Officer/animated.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Controller/MultiCam.gd" type="Script" id=2]
+[ext_resource path="res://assets/Controller/CamPivot.gd" type="Script" id=3]
+[ext_resource path="res://Joyeuse/core/AutoIK/AutoIK.gd" type="Script" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.467423
+height = 2.46233
+
+[node name="Spatial" type="Spatial"]
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.80528, 0.00256085 )
+shape = SubResource( 1 )
+
+[node name="animatedglb" parent="KinematicBody" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.141189 )
+
+[node name="Skeleton" parent="KinematicBody/animatedglb/Character/Riggus Universalis" index="0"]
+bones/4/bound_children = [ NodePath("BoneAttachment") ]
+
+[node name="Leg_IK_L" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton" index="15"]
+script = ExtResource( 4 )
+Magnet = NodePath("")
+
+[node name="Leg_IK_R" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton" index="16"]
+script = ExtResource( 4 )
+Magnet = NodePath("")
+
+[node name="BoneAttachment" type="BoneAttachment" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton" index="17"]
+transform = Transform( 0.989962, 0.00811507, 0.1411, -0.00185675, 0.999011, -0.0444289, -0.141321, 0.0437209, 0.988998, 5.27886e-05, 2.18651, 0.176904 )
+bone_name = "head"
+
+[node name="Position3D" type="Position3D" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton/BoneAttachment"]
+transform = Transform( 0.999998, 0.00165364, 0.00132818, -0.00165367, 0.999998, 2.52575e-05, -0.00132813, -2.79099e-05, 0.999999, 0.00161058, 0.247318, 0.0605447 )
+
+[node name="SkeletonIK" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton" index="18"]
+script = ExtResource( 4 )
+Magnet = NodePath("")
+
+[node name="BoneAttachment" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton" index="19"]
+transform = Transform( 0.999976, 0.00468605, -0.00484023, -0.00460272, 0.999844, 0.0170451, 0.00492, -0.0170229, 0.999842, -0.00362553, 1.50031, 0.114144 )
+
+[node name="Aim_Target" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton/BoneAttachment" index="0"]
+transform = Transform( 0.179452, -0.751358, 0.635033, 0.0366036, 0.650165, 0.758916, -0.983091, -0.112945, 0.144175, 0.491546, 0.545448, 2.80691 )
+
+[node name="BoneAttachment2" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton" index="20"]
+transform = Transform( -0.19114, -0.335639, 0.922405, 0.878156, -0.478304, 0.00793359, 0.438516, 0.811514, 0.386168, -0.558335, 1.7846, 1.04433 )
+
+[node name="BoneAttachment3" parent="KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton" index="21"]
+transform = Transform( -0.19114, -0.335639, 0.922405, 0.878156, -0.478304, 0.00793359, 0.438516, 0.811514, 0.386168, -0.558335, 1.7846, 1.04433 )
+
+[node name="Pivot" type="Position3D" parent="KinematicBody"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.2852, -0.00117603 )
+
+[node name="Target" type="Position3D" parent="KinematicBody"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.51115e-06, 2.22741, 21.7995 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.2852, -0.00117603 )
+cull_mask = 1048571
+current = true
+fov = 109.367
+near = 0.16
+far = 100000.0
+script = ExtResource( 2 )
+collision_exceptions = [ NodePath("../KinematicBody") ]
+pivot = NodePath("../KinematicBody/animatedglb/Character/Riggus Universalis/Skeleton/BoneAttachment/Position3D")
+target = NodePath("../KinematicBody/Target")
+tps_target = NodePath("../CamPivot/TPpivot")
+
+[node name="RayCast" type="RayCast" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2173e-08, 0, -0.139243 )
+cast_to = Vector3( 0, 0, 0.5 )
+
+[node name="CamPivot" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.17572, 0 )
+script = ExtResource( 3 )
+
+[node name="TPpivot" type="Position3D" parent="CamPivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175294, 0.180677, 0 )
+
+[editable path="KinematicBody/animatedglb"]

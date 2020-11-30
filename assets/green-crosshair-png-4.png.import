@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/green-crosshair-png-4.png-b0e9ffaf7cbfd05db9540906f2f7a5dd.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/green-crosshair-png-4.png"
-dest_files=[ "res://.import/green-crosshair-png-4.png-b0e9ffaf7cbfd05db9540906f2f7a5dd.stex" ]
-
 [params]
 
 compress/mode=0

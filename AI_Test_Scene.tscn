@@ -174,7 +174,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5896, 0.311514, -21.3087 )
 transform = Transform( 0.395247, 0, 0, 0, 0.395247, 0, 0, 0, 0.395247, -35.4966, -0.286037, -15.4709 )
 
 [node name="SphtKR" parent="." instance=ExtResource( 19 )]
-transform = Transform( 0.395248, 0, 0, 0, 0.395248, 0, 0, 0, 0.395248, -33.1936, 0.499647, -21.2488 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.1936, 0.499647, -21.2488 )
 
 [node name="VacBob5" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4991, 0.345634, -17.7845 )

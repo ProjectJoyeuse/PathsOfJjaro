@@ -1,6 +1,6 @@
 # This script determines the behaviour of the fusion bolt (not supercharge)
 extends RigidBody
-var explosion = preload("res://Joyeuse/Basics/Guns/explosion.tscn")
+var explosion = preload("res://joyeuse/core/weapons/explosion.tscn")
 var sound = "res://assets/sounds/M1/MA75B_explosion.wav"
 var damage = 90
 var radius = 2.5

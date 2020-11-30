@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lens_flare_icon.png-795bc03aa2ab5dcb437dfb41c725b693.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://addons/Screen_Lens/lens_flare_icon.png"
-dest_files=[ "res://.import/lens_flare_icon.png-795bc03aa2ab5dcb437dfb41c725b693.stex" ]
-
 [params]
 
 compress/mode=0
