@@ -1,6 +1,6 @@
 [gd_resource type="Environment" load_steps=3 format=2]
 
-[ext_resource path="res://assets/Environments/citadel.hdr" type="Texture" id=1]
+[ext_resource path="res://assets/Environments/day.png" type="Texture" id=1]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 1 )
@@ -17,7 +17,7 @@ auto_exposure_enabled = true
 auto_exposure_scale = 0.15
 auto_exposure_min_luma = 0.06
 auto_exposure_max_luma = 4.73
-auto_exposure_speed = 0.3
+auto_exposure_speed = 9.26
 ss_reflections_enabled = true
 ss_reflections_max_steps = 128
 ss_reflections_fade_in = 1.2
