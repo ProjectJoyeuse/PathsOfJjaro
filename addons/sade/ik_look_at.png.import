@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/ik_look_at.png-9127e12c7a59faf98e66142c84e0d5b7.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://addons/sade/ik_look_at.png"
+dest_files=[ "res://.import/ik_look_at.png-9127e12c7a59faf98e66142c84e0d5b7.stex" ]
+
 [params]
 
 compress/mode=0
